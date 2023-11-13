@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+    {% include 'navbar.html' %}
+    <h1>Find User</h1>
+    <form action="/find_user" method ="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br>
+        {% if error %}
+        <p>{{ error }}</p>
+        {% endif %}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,5 @@
+8. Testing: Ensure that you are writing tests for your routes. This is not shown in the provided code, but it's an important part of developing a reliable application.
+
+do i need an update or delete functions or can i use db.session
+
+Remember to test your application using an API testing tool like Postman or curl.
