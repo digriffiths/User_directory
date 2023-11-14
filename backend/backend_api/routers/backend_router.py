@@ -1,11 +1,9 @@
 from fastapi import HTTPException
-from fastapi import APIRouter, Request, Form, Depends, HTTPException
-from fastapi.responses import RedirectResponse
+from fastapi import APIRouter, Depends, HTTPException
 from ...utils.databases import SQLDB
 from ..models import users_table
 from fastapi.templating import Jinja2Templates
 from ..services.DatabaseManager import DatabaseManager
-from sqlalchemy import and_
 from fastapi import Body
 import aiohttp
 

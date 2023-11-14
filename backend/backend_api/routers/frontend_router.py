@@ -1,7 +1,6 @@
 from fastapi import HTTPException
-from fastapi import APIRouter, Request, Form, Depends, HTTPException
+from fastapi import APIRouter, Request, Form, HTTPException
 from fastapi.responses import RedirectResponse
-from ...utils.databases import SQLDB
 from ..models import users_table
 from fastapi.templating import Jinja2Templates
 from ..services.DatabaseManager import DatabaseManager

@@ -1,10 +1,6 @@
 from .routers.backend_router import router as backend_router
 from .routers.frontend_router import router as frontend_router
-
-from fastapi import FastAPI, Request
-from starlette.middleware.base import BaseHTTPMiddleware
-from starlette.responses import Response
-import logging
+from fastapi import FastAPI
 from .services.LoggingMiddleware import LoggingMiddleware
 from fastapi.middleware.cors import CORSMiddleware
 

@@ -3,7 +3,6 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-
 class users_table(Base):
     __tablename__ = 'users_table'
 
