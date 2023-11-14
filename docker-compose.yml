@@ -21,25 +21,25 @@ services:
     ports:
       - "5433:5432"
 
-  test:
-    image: myapp
-    volumes:
-      - .:/app
-    command: pytest backend/backend_api/tests/
-    depends_on:
-      - web
+  # test:
+  #   image: myapp
+  #   volumes:
+  #     - .:/app
+  #   command: pytest backend/backend_api/tests/
+  #   depends_on:
+  #     - web
 
-  testwatcher:
-    image: myapp
-    volumes:
-      - .:/app
-    command: >
-      /bin/bash -c "
-      cd backend &&
-      poetry run watchmedo shell-command --patterns='*.py' --recursive --command='pytest backend_api/tests/'
-      "
-    depends_on:
-      - web
+  # testwatcher:
+  #   image: myapp
+  #   volumes:
+  #     - .:/app
+  #   command: >
+  #     /bin/bash -c "
+  #     cd backend &&
+  #     poetry run watchmedo shell-command --patterns='*.py' --recursive --command='pytest backend_api/tests/'
+  #     "
+  #   depends_on:
+  #     - web
 
 volumes:
   fast_api_db_data:

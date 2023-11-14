@@ -21,9 +21,7 @@ def setup_teardown():
     yield user_id  # this is where the testing happens
 
     # Teardown: Remove the user from the database
-    # db.delete_record(users_table, user_id)
-
-# test gfdhgfd gfdgdf
+    db.delete_record(users_table, user_id)
 
 
 @pytest.fixture(scope="module")
@@ -31,9 +29,11 @@ def user_id(setup_teardown):
     return setup_teardown
 
 
-def test_get_user(user_id):  # pytest will automatically pass the user_id from the fixture
+def test_get_user(user_id):
     response = client.get(f"/get_user/{user_id}")
     assert response.status_code == 200
+    assert response.json()["name"] == "test"
+    assert response.json()["email"] == "test@example.com"
 
 # def test_read_form():
 #     response = client.get("/")
